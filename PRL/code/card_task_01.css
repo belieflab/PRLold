@@ -1,0 +1,105 @@
+img {
+  float:left;
+}
+
+body {
+  background-color: rgba(127, 127, 127, 1);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.attrition, .buttonHolder, .consent, .error, .instructions,  .task {
+  display: none;
+}
+
+.buttonHolder, .loading{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.centeredDiv {
+  margin: 0 auto;
+  width: 660px;
+}
+
+.consent-box {
+  background:#CEE8FC; /* #FCF9CE */
+  border:solid 0px #98BE10;
+  color:#222222; padding:4px;
+}
+
+#consentHeading, #consentParticipantType{
+  text-align: center;
+}
+ #consentPreamble {
+   text-align: center;
+ }
+ 
+#consentInstructions {
+  margin: 0 auto;
+  text-align: justify;
+}
+    
+.feedback {
+  display: none;
+  font-size: 50px;
+  color: #FF0000;
+  top: 0; 
+  right: 0;
+  bottom: 0; 
+  left: 0;
+  position:absolute;
+  text-align:center;
+  vertical-align:middle;
+  line-height: 270px;
+  width: 192px; /* 200 - (border*2) */
+  height: 262px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(255,255,255,1);
+  border: 4px solid black;
+}
+
+.filler{
+  height: 40px;
+}
+
+.deckContainer{
+  position: relative;
+  margin: auto;
+  max-width: 660px;
+}
+
+.fixation, .break {
+  display: none;
+  font-size: 80px;
+  line-height: 270px;
+  margin: auto;
+  max-width: 660px;
+  position: relative; 
+  text-align:center;
+}
+
+.break {
+  font-size: 24px;
+  line-height: normal;
+}
+
+.imgContainer{
+  position:relative;
+  margin: 0 auto;
+  float:left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+#nextButton {
+  background-color: #21822D; /* green */
+  border: black solid 3px;
+  color: white;
+  font-size: 30px;
+  height: 50px;
+  margin: 30px auto;
+  width: 300px;
+}
