@@ -116,7 +116,7 @@ for (var i = trialsPerBlock; i <= totalTrials; i += trialsPerBlock) {
 }
 
 // Choose deck placement
-var deckImagePrefix    = "https://perceptionexperiments.net/SDU/PR/PR01/stimuli/deck_";
+var deckImagePrefix    = "https://belieflab.yale.edu/PRL/stimuli/deck_";
 var deckImageExtension = ".jpg";
 var probabilityNames   = ['high', 'medium', 'low'];
 var probabilityOrder   = shuffle(deepCopy(probabilityNames));
