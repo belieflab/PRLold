@@ -442,7 +442,7 @@ $(document).keypress(function(key) {
 var user_agent_string          = navigator.userAgent;
 var mobile_browser_error_id    = "#mobileBrowserErrorMessage";
 var worker_id_error_id         = "#workerIDErrorMessage";
-var pastParticipantListCSVName = '../data/past_participant_list.csv';
+var pastParticipantListCSVName = 'data/past_participant_list.csv';
 var pastParticipantList        = [];
 var csvData, pastParticipantList;
 
