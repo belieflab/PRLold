@@ -72,9 +72,9 @@ var response;
 var probabilities           = [ [0.9, 0.5, 0.1], [0.8, 0.4, 0.2] ];
 // 0 = [0.9, 0.5, 0.1]; 1=[0.8, 0.4, 0.2]
 // var firstHalfProbabilities  = probabilities[randomIntFromInterval(0, 1)];
-var firstHalfProbabilities  = probabilities[randomIntFromInterval(1, 1)];
+var firstHalfProbabilities  = probabilities[randomIntFromInterval(0, 0)];
 // var secondHalfProbabilities = probabilities[randomIntFromInterval(0, 1)];
-var secondHalfProbabilities = probabilities[randomIntFromInterval(0, 0)];
+var secondHalfProbabilities = probabilities[randomIntFromInterval(1, 1)];
 var numBlocks               = 4;
 var trialsPerBlock          = 40;
 var totalTrials             = numBlocks * trialsPerBlock;
