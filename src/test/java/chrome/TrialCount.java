@@ -27,14 +27,13 @@ public class TrialCount {
 		   driver.getCurrentUrl();
 		   
 		   // Navigate to the required web application
-		   driver.get("https://belieflab.yale.edu/PRL/code/card_task_01.php");
+		   driver.get("https://belieflab.yale.edu/capr/prl/code/card_task_01.php");
 
 		   // Enter test ID
 		   driver.switchTo().alert().sendKeys("jenkinsTestChrome");
 			driver.switchTo().alert().accept();
 
 			// Confirm test ID
-			driver.switchTo().alert().sendKeys("jenkinsTestChrome");
 			driver.switchTo().alert().accept();
 		   
 		   // Assertion test for TrialCount
