@@ -23,7 +23,22 @@ var keyMap = {
 };
 
 
-var worker_id = getParamFromURL( "workerId" );
+
+//subject ID popup
+//var worker_id = getParamFromURL( "workerId" );
+
+var worker_id = prompt("enter subjectID:");
+var confirm_id = alert("You have entered:\n\n" + worker_id + "\n\nIf incorrect, please refresh the browser and enter the correct ID.");
+
+
+if (!isEmpty(worker_id)) {
+  Math.seedrandom(worker_id);
+} else {
+  var this_seed = new Date().getTime();
+  Math.seedrandom(this_seed);
+  worker_id = "AUNDEFINED_" + this_seed;
+}
+
 // choose seed based on mturk info. XXX Implement seeding based on manually input worker ID
 if (!isEmpty(worker_id)) {
     Math.seedrandom(worker_id);
