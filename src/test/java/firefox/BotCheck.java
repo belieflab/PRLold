@@ -33,7 +33,6 @@ public class BotCheck {
 			driver.switchTo().alert().accept();
 
 			// Confirm test ID
-			driver.switchTo().alert().sendKeys("jenkinsTestChrome");
 			driver.switchTo().alert().accept();
 		   
 		   // Click the Consent/Next button

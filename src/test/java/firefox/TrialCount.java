@@ -36,7 +36,6 @@ public class TrialCount {
 			driver.switchTo().alert().accept();
 
 			// Confirm test ID
-			driver.switchTo().alert().sendKeys("jenkinsTestChrome");
 			driver.switchTo().alert().accept();
 		   
 		   // Assertion test for TrialCount
