@@ -29,10 +29,10 @@ public class OpenBrowser {
 		   driver.get("https://belieflab.yale.edu/capr/prl/code/card_task_01.php");
 
 		   // Enter test ID
+		   driver.switchTo().alert().sendKeys("jenkinsTestChrome");
 			driver.switchTo().alert().accept();
 
 			// Confirm test ID
-			driver.switchTo().alert().sendKeys("jenkinsTestChrome");
 			driver.switchTo().alert().accept();
 		   
 		   //Close Driver

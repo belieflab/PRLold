@@ -40,7 +40,7 @@ public class SaveData {
 		   driver.findElement(By.id("nextButton")).sendKeys(Keys.RETURN);
 		   
 		   // Input text into required field
-		   driver.findElement(By.id("attritionAns")).sendKeys("I will answer open-ended questions.");
+		   driver.findElement(By.id("attritionAns")).sendKeys("I am ready to begin this task.");
 		   
 		   // Click Next Button
 		   driver.findElement(By.id("nextButton")).sendKeys(Keys.RETURN);

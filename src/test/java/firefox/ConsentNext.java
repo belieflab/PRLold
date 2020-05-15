@@ -36,6 +36,7 @@ public class ConsentNext {
 			driver.switchTo().alert().accept();
 		   
 		   // Click the Consent/Next button
+		   Thread.sleep(1000);
 		   driver.findElement(By.id("nextButton")).sendKeys(Keys.RETURN);
 		   
 		   //Close Driver
