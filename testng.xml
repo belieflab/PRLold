@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Reliability">
+
+<listeners>
+<listener class-name="ExtentReportListener.ExtentReportNG" />
+</listeners>
+
+
+	<test name="ShortTests">
+		<classes>
+		
+			<class name="chrome.OpenBrowser"/>
+			<class name="chrome.ConsentNext"/>
+			<class name="chrome.BotCheck"/>
+
+			<class name="chrome.KeyMapLeft"/>
+			<class name="chrome.KeyMapMiddle"/>
+			<class name="chrome.KeyMapRight"/>
+			
+			<class name="chrome.BlockCount"/>
+			<class name="chrome.TrialCount"/>
+			<class name="chrome.VerifyProbability"/>	
+			
+			<class name="chrome.StimPath"/>	
+			
+			<class name="firefox.OpenBrowser"/>
+			<class name="firefox.ConsentNext"/>
+			<class name="firefox.BotCheck"/>
+			<class name="firefox.ConsentNext"/>
+
+			<class name="firefox.KeyMapLeft"/>
+			<class name="firefox.KeyMapMiddle"/>
+			<class name="firefox.KeyMapRight"/>
+			
+			<class name="firefox.BlockCount"/>
+			<class name="firefox.TrialCount"/>
+			<class name="firefox.VerifyProbability"/>	
+			
+			<class name="firefox.StimPath"/>	
+			
+		</classes>
+  </test> <!-- Test -->
+  
+	<test name="LongtTests">
+		<classes>
+		
+			<class name="chrome.SaveData"/>
+			
+			<class name="firefox.SaveData"/>	
+			
+		</classes>
+  </test> <!-- Test -->
+
+  
+  
+
+
+  
+  
+</suite> <!-- Suite -->
+
+
+
+
