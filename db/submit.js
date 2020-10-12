@@ -63,22 +63,22 @@ function submitIntake() {
 
     switch(siteID.options[siteID.selectedIndex].value){
         case "Maryland":
-            siteNumber = "01";
+            siteNumber = "10";
             break;
         case "Northwestern":
-            siteNumber = "02";
+            siteNumber = "20";
             break;
         case "Temple":
-            siteNumber = "03";
+            siteNumber = "30";
             break;
         case "Georgia":
-            siteNumber = "04";
+            siteNumber = "40";
             break;
         case "Yale":
-            siteNumber = "05";
+            siteNumber = "50";
             break;
         case "Emory":
-            siteNumber = "06";
+            siteNumber = "60";
             break;
         default:
             siteNumber = "00";
