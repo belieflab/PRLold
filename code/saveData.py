@@ -9,7 +9,12 @@ cgitb.enable(display=0, logdir="pylogs")
 
 data 						= cgi.FieldStorage()
 fileName   					= data.getvalue("fileName", "FILENAME_NULL")
+subjectkey	 				= data.getvalue("subjectkey", "GUID_NULL")
 autoWorkerID 				= data.getvalue("autoWorkerID", "AUTOWORKERID_NULL")
+interview_date 				= data.getvalue("interview_date", "INTERVIEWDATE_NULL")
+interview_age 				= data.getvalue("interview_age", "INTERVIEWAGE_NULL")
+sex 						= data.getvalue("sex", "SEX_NULL")
+task_version 				= data.getvalue("task_version", "SEX_NULL")
 excludedFileName   			= data.getvalue("excludedFileName", "EXCLUDEDFILENAME_NULL")
 startDate					= data.getvalue("startDate", "STARTDATE_NULL")
 endDate						= data.getvalue("endDate", "ENDDATE_NULL")
@@ -42,7 +47,7 @@ with open(fileName, 'a') as csvFile:
 
 	for row in range(numRows):
 
-		csvWriter.writerow([autoWorkerID, startDate, endDate, userAgentString, trialNums[row],
+		csvWriter.writerow([subjectkey, autoWorkerID, interview_date, interview_age, sex, task_version, startDate, endDate, userAgentString, trialNums[row],
 			firstHalfProbabilities, secondHalfProbabilities, deckColors[row], deckPositions[row],
 			deckProbabilities[row], deckProbabilityOrder[row], colors[row], keys[row], positions[row],
 			probabilities[row], results[row], reversals[row], RT[row], score[row], excludedReason])
