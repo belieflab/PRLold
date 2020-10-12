@@ -14,6 +14,7 @@ autoWorkerID 				= data.getvalue("autoWorkerID", "AUTOWORKERID_NULL")
 interview_date 				= data.getvalue("interview_date", "INTERVIEWDATE_NULL")
 interview_age 				= data.getvalue("interview_age", "INTERVIEWAGE_NULL")
 sex 						= data.getvalue("sex", "SEX_NULL")
+task_version 				= data.getvalue("task_version", "SEX_NULL")
 excludedFileName   			= data.getvalue("excludedFileName", "EXCLUDEDFILENAME_NULL")
 startDate					= data.getvalue("startDate", "STARTDATE_NULL")
 endDate						= data.getvalue("endDate", "ENDDATE_NULL")
@@ -44,8 +45,8 @@ with open(fileName, 'a') as csvFile:
 	csvWriter = csv.writer(csvFile, delimiter=",")
 
 	for row in range(numRows):
-		csvWriter.writerow('subjectkey', 'src_subject_id', 'interview_date', 'interview_age', 'sex', 'start_time', 'end_time', 'browser', 'trial', 'first_half_probabilities', 'second_half_probabilities', 'deck_color', 'deck_position', 'deck_probability_value_1', 'deck_probability_value_2', 'response_color', 'key_press', 'response_position', 'response_probability', 'reward', 'trial_type', 'rt', 'score', 'exclusion_reason')
-		csvWriter.writerow([subjectkey, autoWorkerID, interview_date, interview_age, sex, startDate, endDate, userAgentString, trialNums[row],
+		csvWriter.writerow('subjectkey', 'src_subject_id', 'interview_date', 'interview_age', 'sex', 'task_version', 'start_time', 'end_time', 'browser', 'trial', 'first_half_probabilities', 'second_half_probabilities', 'deck_color', 'deck_position', 'deck_probability_value_1', 'deck_probability_value_2', 'response_color', 'key_press', 'response_position', 'response_probability', 'reward', 'trial_type', 'rt', 'score', 'exclusion_reason')
+		csvWriter.writerow([subjectkey, autoWorkerID, interview_date, interview_age, sex, task_version, startDate, endDate, userAgentString, trialNums[row],
 			firstHalfProbabilities, secondHalfProbabilities, deckColors[row], deckPositions[row],
 			deckProbabilities[row], deckProbabilityOrder[row], colors[row], keys[row], positions[row],
 			probabilities[row], results[row], reversals[row], RT[row], score[row], excludedReason])

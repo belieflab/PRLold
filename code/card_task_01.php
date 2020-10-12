@@ -72,7 +72,9 @@ header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading wor
 <!-- <script type="text/javascript" src="https://perceptionexperiments.net/SDU/Libraries/numjs.min.js"></script> -->
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 <script type="text/javascript" src="https://belieflab.yale.edu/PRL/libraries/jquery.csv.js"></script>
-<!-- <script type="text/javascript" src="card_task_01.js"></script> -->
+<script type="text/javascript" src="../exp/fn.js"></script>
+<script type="text/javascript" src="../exp/conf.js"></script>
+
 <script>
   // show page when loaded 
   window.onload = function() {
