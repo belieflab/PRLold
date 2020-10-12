@@ -38,7 +38,7 @@ numRows = len(trialNums)
 # Write to the file - XXX FIX BASED ON ROW INDEX
 with open(fileName, 'a') as csvFile:
 	csvWriter = csv.writer(csvFile, delimiter=",")
-	csvWriter.writerow('subjectkey', 'src_subject_id', 'interview_date', 'interview_age', 'sex', 'task_version', 'start_time', 'end_time', 'browser', 'trial', 'first_half_probabilities', 'second_half_probabilities', 'deck_color', 'deck_position', 'deck_probability_value_1', 'deck_probability_value_2', 'response_color', 'key_press', 'response_position', 'response_probability', 'reward', 'trial_type', 'rt', 'score', 'exclusion_reason')
+	csvWriter.writerow(['subjectkey', 'src_subject_id', 'interview_date', 'interview_age', 'sex', 'task_version', 'start_time', 'end_time', 'browser', 'trial', 'first_half_probabilities', 'second_half_probabilities', 'deck_color', 'deck_position', 'deck_probability_value_1', 'deck_probability_value_2', 'response_color', 'key_press', 'response_position', 'response_probability', 'reward', 'trial_type', 'rt', 'score', 'exclusion_reason'])
 
 	for row in range(numRows):
 
