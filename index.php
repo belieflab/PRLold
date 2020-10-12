@@ -24,7 +24,7 @@ function getParamFromURL(name)
 var links = [];
 var usernameFromParamString = getParamFromURL( 'workerId' );
 
-links[0]="code/card_task_01.php"+"?workerId="+usernameFromParamString; // Expt 1: Paranoia Reversals 11-30-2017
+links[0]="code/card_task_01.php"//+"?workerId="+usernameFromParamString; // Expt 1: Paranoia Reversals 11-30-2017
 
 
 

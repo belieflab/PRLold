@@ -25,38 +25,38 @@ var keyMap = {
 
 
 //subject ID popup
-//var worker_id = getParamFromURL( "workerId" );
+//var workerId = getParamFromURL( "workerId" );
 
-var worker_id = prompt("enter subjectID:");
-var confirm_id = alert("You have entered:\n\n" + worker_id + "\n\nIf incorrect, please refresh the browser and enter the correct ID.");
+// var workerId = prompt("enter subjectID:");
+// var confirm_id = alert("You have entered:\n\n" + workerId + "\n\nIf incorrect, please refresh the browser and enter the correct ID.");
 
 
-if (!isEmpty(worker_id)) {
-  Math.seedrandom(worker_id);
-} else {
-  var this_seed = new Date().getTime();
-  Math.seedrandom(this_seed);
-  worker_id = "AUNDEFINED_" + this_seed;
-}
+// if (!isEmpty(workerId)) {
+//   Math.seedrandom(workerId);
+// } else {
+//   var this_seed = new Date().getTime();
+//   Math.seedrandom(this_seed);
+//   workerId = "AUNDEFINED_" + this_seed;
+// }
 
 // choose seed based on mturk info. XXX Implement seeding based on manually input worker ID
-if (!isEmpty(worker_id)) {
-    Math.seedrandom(worker_id);
-} else {
-    var this_seed = new Date().getTime();
-    Math.seedrandom(this_seed);
-    worker_id = "AUNDEFINED_" + this_seed;
-}
+// if (!isEmpty(workerId)) {
+//     Math.seedrandom(workerId);
+// } else {
+//     var this_seed = new Date().getTime();
+//     Math.seedrandom(this_seed);
+//     workerId = "AUNDEFINED_" + this_seed;
+// }
 var link = "https://survey.az1.qualtrics.com/SE/?SID=SV_5jt7BivBUleMhWl&Q_JFE=0&workerId=" +
-worker_id;
+workerId;
 
 var refreshCount          = parseInt("<?php echo $_SESSION['refreshCount']; ?>");
 var dataDirectory         = '../data/';
 var stimulusDirectory     = '../stimuli/';
-var csvPrefix             = "card_task_01_";
+var csvPrefix             = "3-PRLT_";
 var csvExtension          = '.csv';
-var subjectFileName       = dataDirectory + csvPrefix + worker_id + csvExtension;
-var excludedCSVName       = dataDirectory + csvPrefix + worker_id + "_excluded.csv";
+var subjectFileName       = dataDirectory + csvPrefix + workerId + csvExtension;
+var excludedCSVName       = dataDirectory + csvPrefix + workerId + "_excluded.csv";
 var attritionListFileName = dataDirectory + csvPrefix + "attrition_list.csv";
 
 
@@ -91,7 +91,7 @@ var firstHalfProbabilities  = probabilities[randomIntFromInterval(0, 0)];
 // var secondHalfProbabilities = probabilities[randomIntFromInterval(0, 1)];
 var secondHalfProbabilities = probabilities[randomIntFromInterval(1, 1)];
 var numBlocks               = 4;
-var trialsPerBlock          = 40;
+var trialsPerBlock          = 4;
 var totalTrials             = numBlocks * trialsPerBlock;
 var breakTrials             = [];
 var trial                   = 0;
@@ -168,7 +168,7 @@ images = preloadImages(deckImagePrefix, deckColorOrder, deckImageExtension);
 
 // Attrition instructions
 var attrition_instructions =  "Please type the following sentence into the box below exactly as written " +
-"to proceed: " + 
+"to proceed: " + "<br>" +
 "<i>I am ready to begin this task.</i>" +
 "<br /><br />";
 
@@ -216,12 +216,12 @@ var instr7 = "However, there is one final catch: <b>there may be times when the 
 "The following is a practice round of just 3 turns. The points you get here won’t change your final score, " +
 "and the best deck will change between the practice round and when the real game starts." +
 "<br /><br />" +
-"Please click the 'Next' button to start the practice round.";
+"Please click the 'Begin' button to start the practice round.";
 
 var endPracticeInstructions = "You have now completed the practice round. " +
 "The main task will take approximately another 10 minutes, with longer individual rounds than the practice. " +
 "<br /><br />" +
-"Please click 'Next' whenever you are ready to start the main task.";
+"Please click 'Begin' whenever you are ready to start the main task.";
 
 
 var task_instructions = [];
@@ -263,7 +263,7 @@ document.getElementById('nextButton').onclick = function() {
     $(".attrition").css({"display": "block"});
 
     // reword next button
-		$('#nextButton').text("Next");
+		$('#nextButton').text("BEGIN");
 
   // Attrition phase end, instructions phase start
   } else if (nextButtonClickCounter == 2) {
@@ -275,10 +275,12 @@ document.getElementById('nextButton').onclick = function() {
 			$(".attrition").css({"display": "none"});
 			$(".instructions").css({"display": "block"});
       $("#nextButton").css({"display": "none"});
+      $("#hide").css({"display": "none"});
+      $(".screening").css({"background-color": "gray"});
       interactiveInstructionsOn = true;
       keysAllowed = true;
       practiceOn = false;
-      addToParticipantList(worker_id, firstHalfProbabilities, secondHalfProbabilities,
+      addToParticipantList(workerId, firstHalfProbabilities, secondHalfProbabilities,
       startDate, startDate, attritionListFileName); // add to attrition list since they saw the instructions
 
     }
@@ -456,7 +458,7 @@ $(document).keypress(function(key) {
 //-------------------------------------------
 var user_agent_string          = navigator.userAgent;
 var mobile_browser_error_id    = "#mobileBrowserErrorMessage";
-var worker_id_error_id         = "#workerIDErrorMessage";
+var workerId_error_id         = "#workerIDErrorMessage";
 var pastParticipantListCSVName = '../data/past_participant_list.csv';
 var pastParticipantList        = [];
 var csvData, pastParticipantList;
@@ -466,15 +468,15 @@ pastParticipantList = csvData;
 pastParticipantList = flatten(pastParticipantList);
 
 //get worker ID if embedded in URL
-var worker_id_valid = validate_worker_id( worker_id );
-var worker_id_used_before = check_worker_id_used_before( worker_id, pastParticipantList );
+// var workerId_valid = validate_workerId( workerId );
+var workerId_used_before = check_workerId_used_before( workerId, pastParticipantList );
 
 //check that user is not on a mobile device, and if they're not, begin instructions
 if (!validate_browser(user_agent_string))
 {
   $('.error').css({'display': 'block'});
   $(mobile_browser_error_id).css({'display': 'block'});
-  $(worker_id_error_id).css({'display': 'none'});
+  $(workerId_error_id).css({'display': 'none'});
   $('.buttonHolder').css({'display': 'none'});
   $('.consent').css({'display': 'none'});
   $('.instructions').css({'display': 'none'});
@@ -482,10 +484,10 @@ if (!validate_browser(user_agent_string))
 
 }
 
-if (worker_id_used_before) {
+if (workerId_used_before) {
   $('.error').css({'display': 'block'});
   $(mobile_browser_error_id).css({'display': 'none'});
-  $(worker_id_error_id).css({'display': 'block'});
+  $(workerId_error_id).css({'display': 'block'});
   $('.buttonHolder').css({'display': 'none'});
   $('.consent').css({'display': 'none'});
   $('.instructions').css({'display': 'none'});
@@ -560,11 +562,11 @@ function reset() {
       endDate = new Date();
 
       // check if we're excluding data
-      var this_worker_id_used_before = check_worker_id_used_before( worker_id, pastParticipantList );
+      var this_workerId_used_before = check_workerId_used_before( workerId, pastParticipantList );
 
-      if ( (this_worker_id_used_before) || (refreshCount > 0) ) {
+      if ( (this_workerId_used_before) || (refreshCount > 0) ) {
         excludeThisSubject = true;
-        if (this_worker_id_used_before) {
+        if (this_workerId_used_before) {
           excludedReason = 'duplicate_worker';
         } else if (refreshCount > 0) {
           excludedReason = 'refreshed_experiment_page';
@@ -572,7 +574,7 @@ function reset() {
       }
 
       saveData();
-      addToParticipantList(worker_id, firstHalfProbabilities, secondHalfProbabilities,  startDate, endDate, pastParticipantListCSVName); // XXX
+      addToParticipantList(workerId, firstHalfProbabilities, secondHalfProbabilities,  startDate, endDate, pastParticipantListCSVName); // XXX
     }
 
     setBreakText(breakText);
@@ -723,7 +725,7 @@ function generateCompletionCode(infix, suffix){
 }
 
 // Check that the worker ID has been used before
-function check_worker_id_used_before( id_str, list )
+function check_workerId_used_before( id_str, list )
 {
   var inArray = $.inArray(id_str, list);
   if (inArray == -1) {
@@ -735,26 +737,26 @@ function check_worker_id_used_before( id_str, list )
 }
 
 // validates the worker ID
-function validate_worker_id( id_str )
-{
-  var min_length = 8;
-  var max_length = 25;
-  var bad_reg_ex = /\W/;
+// function validate_workerId( id_str )
+// {
+//   var min_length = 8;
+//   var max_length = 25;
+//   var bad_reg_ex = /\W/;
 
-  if (id_str.length < min_length)
-  return false;
+//   if (id_str.length < min_length)
+//   return false;
 
-  if (id_str.length > max_length)
-  return false;
+//   if (id_str.length > max_length)
+//   return false;
 
-  if (id_str.charAt(0) != 'A' && id_str.charAt(0) != 'a')
-  return false;
+//   if (id_str.charAt(0) != 'A' && id_str.charAt(0) != 'a')
+//   return false;
 
-  if (bad_reg_ex.test(id_str))
-  return false;
+//   if (bad_reg_ex.test(id_str))
+//   return false;
 
-  return true;
-}
+//   return true;
+// }
 
 
 // make sure browser isn't mobile
@@ -817,7 +819,11 @@ function saveData(){
       excludedReason: excludedReason,
       startDate: startDate,
       endDate: endDate,
-      autoWorkerID: worker_id,
+      subjectkey: 'GUID',
+      autoWorkerID: workerId,
+      interview_date: today,
+      interview_age: ageAtAssessment,
+      sex: sexAtBirth,
       userAgentString: user_agent_string,
       firstHalfProbabilities: JSON.stringify(firstHalfProbabilities),
       secondHalfProbabilities: JSON.stringify(secondHalfProbabilities),
