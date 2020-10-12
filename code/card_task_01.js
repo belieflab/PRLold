@@ -396,8 +396,12 @@ function reset() {
     if (percentComplete < 100) {
     	breakText = "You are now " + percentComplete + "% done. Please press the zero (0) key to continue.";
     } else {
-    	breakText = "You have completed the task. Your final score is " + score + " ." +
-      "<br><br>";
+      breakText = "You have completed the task. Your final score is " + score + ".\n" + '<br>' +
+        "You have successfully completed the experiment and your data has been saved.\n" + '<br>' +
+        "To leave feedback on this task, please click the following link:\n" + '<br>' +
+        "<a href='https://omnibus.sh/eCRFs/feedback/prl.php'>Leave Task Feedback!</a>\n" + '<br>' +
+            // "Please wait for the experimenter to continue.\n"+ '<br>' +
+        "You may now close the expriment window at anytime.\n";
 
       // save data
       endDate = new Date();

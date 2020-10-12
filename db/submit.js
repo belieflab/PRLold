@@ -61,27 +61,28 @@ function submitIntake() {
     let siteID = document.getElementById("siteid");
     
 
+    const zeroPad = (num, places) => String(num).padStart(places, '0');
     switch(siteID.options[siteID.selectedIndex].value){
         case "Maryland":
-            siteNumber = "10";
+            siteNumber = zeroPad(1,2);
             break;
         case "Northwestern":
-            siteNumber = "20";
+            siteNumber = zeroPad(2,2);
             break;
         case "Temple":
-            siteNumber = "30";
+            siteNumber = zeroPad(3,2);
             break;
         case "Georgia":
-            siteNumber = "40";
+            siteNumber = zeroPad(4,2);
             break;
         case "Yale":
-            siteNumber = "50";
+            siteNumber = zeroPad(5,2);
             break;
         case "Emory":
-            siteNumber = "60";
+            siteNumber = zeroPad(6,2);
             break;
         default:
-            siteNumber = "00";
+            siteNumber = zeroPad(0,2);
     }
 
     // if(siteID.options[siteID.selectedIndex].value == "Yale") {
