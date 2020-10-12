@@ -81,6 +81,7 @@
     // setTimeout(1000);
     // $.getScript("exp/timeline.js");
     // setTimeout(1000);
+    // $.getScript("../exp/fn2.js");
     $.getScript("../code/card_task_01.js");
     // $.load("include/consent.php");
   }); </script>

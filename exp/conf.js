@@ -55,9 +55,7 @@ var dataDirectory         = '../data/';
 var stimulusDirectory     = '../stimuli/';
 var csvPrefix             = "3-PRLT_";
 var csvExtension          = '.csv';
-var subjectFileName       = dataDirectory + csvPrefix + workerId + csvExtension;
-var excludedCSVName       = dataDirectory + csvPrefix + workerId + "_excluded.csv";
-var attritionListFileName = dataDirectory + csvPrefix + "attrition_list.csv";
+
 
 
 var startDate           = new Date(); //.toISOString() makes it a UTC string...
