@@ -19,10 +19,18 @@ header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading wor
   <link rel="stylesheet" type="text/css" href="card_task_01.css">
   <!-- <title>Probabalistic Reversal Task</title> -->
   <title>3-PRLT</title>
+  <script>
+
+    //onbeforeunload in body
+    function areYouSure() {
+    return "Write something clever here...";
+  }
+  areYouSure();
+  </script>
   
 </head>
 
-<body>
+<body onbeforeunload="return areYouSure()">
 <?php include_once "../include/intake.php"?>
 <div id="attritionHolder" class="attrition centeredDiv"> 
   <p id="attritionInstructions" class="attrition"></p>

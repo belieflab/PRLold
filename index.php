@@ -2,9 +2,16 @@
 <html>
 <head>
 	<title>Mechanical Turk HIT</title>
+  <script>
+  //onbeforeunload in body
+  function areYouSure() {
+    return "Write something clever here...";
+  }
+  areYouSure();
+  </script>
 	
 </head>
-<body>
+<body onbeforeunload="return areYouSure()">
 
 
 <script>
@@ -34,6 +41,8 @@ function randomizeURL(linkArray)
 }
 
 randomizeURL(links);
+
+
 </script>
 
 </body>
