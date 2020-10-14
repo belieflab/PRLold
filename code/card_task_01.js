@@ -117,7 +117,7 @@ document.getElementById('nextButton').onclick = function() {
 			$(".instructions").css({"display": "block"});
       $("#nextButton").css({"display": "none"});
       $("#hide").css({"display": "none"});
-      $(".screening").css({"background-color": "gray"});
+      $(".screening").css({"background-color": "lightgray"}); //changes background color
       interactiveInstructionsOn = true;
       keysAllowed = true;
       practiceOn = false;

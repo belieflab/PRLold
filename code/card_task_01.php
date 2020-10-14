@@ -42,17 +42,17 @@ header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading wor
 <div class="filler"> </div>
 <div class="deckContainer task">
     <div class="imgContainer" id="leftDeck">
-        <img id="leftDeckImage" src="https://belieflab.yale.edu/PRL/stimuli/deck_red.jpg" height="270px" width="200px"/>
+        <img id="leftDeckImage" src="../stimuli/deck_red.jpg" height="270px" width="200px"/>
         <div class="feedback" id="leftFeedback">100</div>
     </div>
     
     <div class="imgContainer" id="middleDeck">
-        <img id="middleDeckImage" src="https://belieflab.yale.edu/PRL/stimuli/deck_black.jpg" height="270px" width="200px"/>
+        <img id="middleDeckImage" src="../stimuli/deck_black.jpg" height="270px" width="200px"/>
         <div class="feedback" id="middleFeedback">-50</div>
     </div>
     
     <div class="imgContainer" id="rightDeck">
-         <img id="rightDeckImage" src="https://belieflab.yale.edu/PRL/stimuli/deck_blue.jpg" height="270px" width="200px"/>
+         <img id="rightDeckImage" src="../stimuli/deck_blue.jpg" height="270px" width="200px"/>
          <div class="feedback" id="rightFeedback">-50</div>
     </div>
     
@@ -66,12 +66,11 @@ header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading wor
 <!-- </body> -->
 <script type="text/javascript" src="../db/submit.js"></script>
 
-<script type="text/javascript" src="https://belieflab.yale.edu/PRL/libraries/Timeout.js"></script>
-<script type="text/javascript" src="https://belieflab.yale.edu/PRL/libraries/lodash.js"></script>
-<script type="text/javascript" src="https://belieflab.yale.edu/PRL/libraries/seedrandom.js"></script>
-<!-- <script type="text/javascript" src="https://perceptionexperiments.net/SDU/Libraries/numjs.min.js"></script> -->
+<script type="text/javascript" src="../libraries/Timeout.js"></script>
+<script type="text/javascript" src="../libraries/lodash.js"></script>
+<script type="text/javascript" src="../libraries/seedrandom.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
-<script type="text/javascript" src="https://belieflab.yale.edu/PRL/libraries/jquery.csv.js"></script>
+<script type="text/javascript" src="../libraries/jquery.csv.js"></script>
 <script type="text/javascript" src="../exp/fn.js"></script>
 <script type="text/javascript" src="../exp/conf.js"></script>
 
