@@ -11,7 +11,7 @@
   </script>
 	
 </head>
-<body onbeforeunload="return areYouSure()">
+<body id='unload' onbeforeunload="return areYouSure()">
 
 
 <script>
