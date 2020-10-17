@@ -76,14 +76,8 @@
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 <script>$("button.loadMain").click(function(){
-    // $.getScript("exp/conf.js");
-    // $.getScript("exp/var.js");
-    // setTimeout(1000);
-    // $.getScript("exp/timeline.js");
-    // setTimeout(1000);
-    // $.getScript("../exp/fn2.js");
     $.getScript("../code/card_task_01.js");
-    // $.load("include/consent.php");
+    $("body").addClass("hideCursor");
   }); </script>
 <script>
 </script>
