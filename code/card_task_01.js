@@ -104,7 +104,11 @@ document.getElementById('nextButton').onclick = function() {
     $(".attrition").css({"display": "block"});
 
     // reword next button
-		$('#nextButton').text("BEGIN");
+    $('#nextButton').text("BEGIN");
+    // $('#nextButton').toggleClass("", "noCursor");
+    $("button.noCursor").click(function(){
+      $("body").addClass("hideCursor");
+      }); 
 
   // Attrition phase end, instructions phase start
   } else if (nextButtonClickCounter == 2) {
@@ -399,7 +403,7 @@ function reset() {
       breakText = "You have completed the task. Your final score is " + score + ".\n" + '<br>' +
         "You have successfully completed the experiment and your data has been saved.\n" + '<br>' +
         "To leave feedback on this task, please click the following link:\n" + '<br>' +
-        "<a href='https://omnibus.sh/eCRFs/feedback/prl.php'>Leave Task Feedback!</a>\n" + '<br>' +
+        "<a href="+feedbackLink+">Leave Task Feedback!</a>\n" + '<br>' +
             // "Please wait for the experimenter to continue.\n"+ '<br>' +
         "You may now close the expriment window at anytime.\n";
 

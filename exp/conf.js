@@ -53,7 +53,7 @@ workerId;
 var refreshCount          = parseInt("<?php echo $_SESSION['refreshCount']; ?>");
 var dataDirectory         = '../data/';
 var stimulusDirectory     = '../stimuli/';
-var csvPrefix             = "3-PRLT_";
+var csvPrefix             = "prl_";
 var csvExtension          = '.csv';
 
 

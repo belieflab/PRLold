@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mechanical Turk HIT</title>
+	<title>3-PRLT</title>
   <script>
   //onbeforeunload in body
   function areYouSure() {
@@ -44,6 +45,8 @@ randomizeURL(links);
 
 
 </script>
-
+<script type="text/javascript">
+    let feedbackLink = "https://omnibus.sh/eCRFs/feedback/tasks/prl.php?studyId=<?php echo $studyId?>";
+    </script>
 </body>
 </html>
