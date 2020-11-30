@@ -101,7 +101,11 @@ $prepare->close();
     $(".consent").css({display: "block"});
     $(".buttonHolder").css({display: "block"});
   };
+  
 </script>
+<script type="text/javascript">
+    let feedbackLink = "https://omnibus.sh/eCRFs/feedback/tasks/prl.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+    </script>
 
 
 </body>
