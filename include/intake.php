@@ -23,8 +23,8 @@
         <input type="submit" value="Submit">
     </form> -->
     <form action="<?php echo SIGNUP_VIEW ?>/post/intakeadd.php" method="post">
-    <p><b>Subject ID Number:</b></p>
-    <input required id="subjectid" type="text" name="consent_id" plattern="\d*" minlength="4" maxlength="4">
+    <p><b>CAPR ID:</b></p>
+    <input required id="subjectid" type="text" name="consent_id" plattern="\d*" minlength="5" maxlength="5">
     
     <!-- GUID -->
     <input required type="hidden" id="guid" name="guid" value="<?php echo $guid ?>">

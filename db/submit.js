@@ -138,7 +138,7 @@ function submitIntake() {
         alert("Please enter a valid SubjectID.")
     } else {
         // alert("your subjectid is " + siteNumber + subjectID);
-        workerId = parseInt(siteNumber + subjectID);
+        workerId = parseInt(subjectID);
         switch(workerId%2){
             case 0:
               reward = 'money';
