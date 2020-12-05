@@ -18,7 +18,7 @@
                  the situation.
 */
 error_reporting( E_ALL );
-ini_set( 'display_errors', 1 ); // RPH: set this to 0 in Production once
+ini_set( 'display_errors', 0 ); // RPH: set this to 0 in Production once
                                 //      logging is set up
 // ini_set( 'log_errors ', 1 ); //      This sets up logging. TODO
 // there are other ways to set up these two flags
