@@ -27,16 +27,19 @@ ini_set( 'display_errors', 0 ); // RPH: set this to 0 in Production once
 /* -- Set Up Database Interaction, CONNECT, reCONNECT, Errors, etc. ---- */
 // Database Connection Parameters
 
-if ( file_exists( $_SERVER[ "DOCUMENT_ROOT" ] . '/omnibus.dev' ) ) { // development machine; please add 'omnibus.dev' to htdocs
-  DEFINE( 'DB_HOST',     "localhost" );
+if ( file_exists( $_SERVER[ "DOCUMENT_ROOT" ] . '/omnibus.yale' ) ) { // Yale production environment; please add 'omnibus.yale' to www
+  DEFINE( 'DB_HOST', "spinup-db000e86.cluster-cyynsscieqtk.us-east-1.rds.amazonaws.com");
+  DEFINE( 'DB_USER',     "jgk5" );
+  DEFINE( 'DB_PASSWORD', "Xk2QsWmaDrj8pfz8" ); // Note: this should be your root password
+  DEFINE( 'DB_NAME',     "omnibus" );
+  DEFINE( 'SALT',        "graduate" ); // needed for guernica mySQL db connection
 } else {
-  DEFINE( 'DB_HOST',     "24.218.193.14" );
+  DEFINE( 'DB_HOST',     "localhost" );
+  DEFINE( 'DB_USER',     "root" );
+  DEFINE( 'DB_PASSWORD', "dingdong" ); // Note: this should be your root password
+  DEFINE( 'DB_NAME',     "omnibus" );
+  DEFINE( 'SALT',        "graduate" ); // needed for guernica mySQL db connection
 }
-
-DEFINE( 'DB_USER',     "jason" );
-DEFINE( 'DB_PASSWORD', "dingdong" ); // Note: this should be your root password
-DEFINE( 'DB_NAME',     "omnibus" );
-DEFINE( 'SALT',        "graduate" );
 
 // RPH 2020/08/16
 /*
