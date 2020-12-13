@@ -7,21 +7,6 @@ elseif ($_SESSION['refreshCount'] >= 0)    {
     $_SESSION['refreshCount']++;
 }
 header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading work
-
-// include_once ("db/config.php");
-
-// $studyId = $_GET["studyId"];
-// $candidateId = $_GET["candidateId"];
-// if (isset($candidateId)) {
-//   $query = "SELECT GUID from phi where sub_id = $candidateId";
-//   $prepare = $db_connection->prepare($query);
-//   $prepare->execute();
-//   $result = $prepare->get_result();
-//   $row = $result->fetch_assoc();
-//   $guid = $row["GUID"];
-//   $prepare->close();
-//   } else {
-// }
 ?>
 
 
@@ -107,7 +92,7 @@ header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading wor
   
 </script>
 <script type="text/javascript">
-    let feedbackLink = "https://omnibus.sh/eCRFs/feedback/tasks/prl.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+    let feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/prl.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
     </script>
 
 
