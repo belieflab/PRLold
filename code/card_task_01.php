@@ -8,20 +8,20 @@ elseif ($_SESSION['refreshCount'] >= 0)    {
 }
 header('Access-Control-Allow-Origin: *'); #necessary to make CSV downloading work
 
-include_once ("db/config.php");
+// include_once ("db/config.php");
 
-$studyId = $_GET["studyId"];
-$candidateId = $_GET["candidateId"];
-if (isset($candidateId)) {
-  $query = "SELECT GUID from phi where sub_id = $candidateId";
-  $prepare = $db_connection->prepare($query);
-  $prepare->execute();
-  $result = $prepare->get_result();
-  $row = $result->fetch_assoc();
-  $guid = $row["GUID"];
-  $prepare->close();
-  } else {
-}
+// $studyId = $_GET["studyId"];
+// $candidateId = $_GET["candidateId"];
+// if (isset($candidateId)) {
+//   $query = "SELECT GUID from phi where sub_id = $candidateId";
+//   $prepare = $db_connection->prepare($query);
+//   $prepare->execute();
+//   $result = $prepare->get_result();
+//   $row = $result->fetch_assoc();
+//   $guid = $row["GUID"];
+//   $prepare->close();
+//   } else {
+// }
 ?>
 
 
