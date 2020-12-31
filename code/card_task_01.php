@@ -118,7 +118,7 @@ $ageInMonths = $_GET["interview_age"];
     let GUID = "<?php echo $subjectKey?>";
     let subjectID = "<?php echo $consortId?>";
     let sexAtBirth = "<?php echo $sexAtBirth?>";
-    let siteID = "<?php echo $institutionAlias?>";
+    let siteNumber = "<?php echo $institutionAlias?>";
     let ageAtAssessment = "<?php echo $ageInMonths?>";
     </script>
 
