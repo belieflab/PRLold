@@ -24,6 +24,11 @@ if (isset($candidateId)) {
   $prepare->close();
   } else {
 }
+$subjectKey = $_GET["subjectkey"];
+$consortId = $_GET["src_subject_id"];
+$sexAtBirth = $_GET["sex"];
+$institutionAlias = $_GET["site"];
+$ageInMonths = $_GET["interview_age"];
 ?>
 
 
@@ -48,7 +53,7 @@ if (isset($candidateId)) {
 </head>
 
 <body onbeforeunload="return areYouSure()">
-<?php include_once "../include/intake.php"?>
+<?php include_once "../include/nda.php"?>
 <div id="attritionHolder" class="attrition centeredDiv"> 
   <p id="attritionInstructions" class="attrition"></p>
   <input required type="text" id="attritionAns" class="attrition" size="60" style="width:inherit; height:17px; font-size:15px; margin: 0 auto;" />
@@ -89,7 +94,7 @@ if (isset($candidateId)) {
 </div> -->
 
 <!-- </body> -->
-<script type="text/javascript" src="../db/submit.js"></script>
+<script type="text/javascript" src="../db/validate.js"></script>
 
 <script type="text/javascript" src="../libraries/Timeout.js"></script>
 <script type="text/javascript" src="../libraries/lodash.js"></script>
@@ -110,6 +115,11 @@ if (isset($candidateId)) {
 </script>
 <script type="text/javascript">
     let feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/prl.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+    let GUID = "<?php echo $subjectKey?>";
+    let subjectID = "<?php echo $consortId?>";
+    let sexAtBirth = "<?php echo $sexAtBirth?>";
+    let siteID = "<?php echo $institutionAlias?>";
+    let ageAtAssessment = "<?php echo $ageInMonths?>";
     </script>
 
 
