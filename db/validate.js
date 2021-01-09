@@ -137,7 +137,6 @@ function submitIntake() {
   
 
     if(subjectID == "") {
-        alert("Please enter a valid SubjectID.")
     } else {
         // alert("your subjectid is " + siteNumber + subjectID);
         workerId = parseInt(subjectID);
