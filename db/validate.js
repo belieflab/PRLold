@@ -1,165 +1,157 @@
+'use strict';
 
+// jsPsych API for NDA variables
 
-// function to store subject number on submit
+// function to store subject number for turk.js on submit
 let workerId;
 
+// declare handedness, assoc vars
 let handedness;
 let antihandedness;
 let EasyKey_uCase;
 let HardKey_uCase;
 
-// let ageAtAssessment;
-
-// let sexAtBirth;
-
-// let GUID;
-
+// assign date, assoc vars
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 let yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
-todayStandard = yyyy + '-' + mm + '-' + dd;
+let todayStandard = yyyy + '-' + mm + '-' + dd;
 
-// function ageFinder(){
-//     if (document.getElementById("dob").value !== '') {
-//         let DOB = dob.value;
-//         let DOByyyy = DOB.slice(0,4);
-//         let DOBmm = DOB.slice(5,7);
-//         // let DOBdd = DOB.slice(8,10);
-//         let ageInMonths = ((yyyy*12)-(DOByyyy*12)+(mm-DOBmm));
-//         ageAtAssessment = parseInt(ageInMonths);
-//     } else {
-//         alert("Please enter your date of birth.");
-//     }
-
-// }
-
-function guidBuilder(){
-    if (document.getElementById("guid").value !== '') {
-        GUID = guid.value;
-    } else {
-        alert("ERROR: No GUID record in database! \nAssessor: Please generate GUID and refresh this page before proceeding.");
-    }
-
-}
+// these functions are called when db_connection === true (e.g. omnibus.local or omnibus.yale) && db_connection === true
 
 function validateIntake() {
     let intake = document.getElementById("intake");
-    let consent = document.getElementById("nextButton");
+    let consent = document.getElementById("load");
     if (intake.style.display === "none") {
-      intake.style.display = "block";
+        intake.style.display = "block";
     } else {
-      intake.style.display = "none";
-      consent.style.display = "block";
-    }
-  }
-
-//   function validateSite() {
-//     // document.getElementById("sex").value = sex;
-//     if (document.getElementById("siteid").value === 'none') {
-//         alert("Please select a valid research site.");
-
-//     }
-// }
-
-function validateBrightness() {
-    // document.getElementById("sex").value = sex;
-    if (document.getElementById("brightness").value == '0') {
-        alert("Please confirm you have turned your screen brightness up to 100%");
-
-    }
-}
-
-// function sexFinder() {
-//     // document.getElementById("sex").value = sex;
-//     if (document.getElementById("male").checked === true) {
-//         sexAtBirth = "M";
-//     } else if (document.getElementById("female").checked === true) {
-//         sexAtBirth = "F";
-//     } 
-// }
-
-function validateSex() {
-    if (document.getElementById("male").checked === false && document.getElementById("female").checked === false ) {
-        alert("Please enter the sex you were assigned at birth.");
+        intake.style.display = "none";
+        consent.style.display = "block";
     }
 }
 
 function validateHandedness() {
-    if (document.getElementById("rightHanded").checked === false && document.getElementById("leftHanded").checked === false ) {
+    if (document.getElementById("rightHanded").checked === false && document.getElementById("leftHanded").checked === false) {
         alert("Please select your dominant hand.");
     }
 }
 
+function validateBrightness() {
+    if (document.getElementById("brightness").checked === false) {
+        alert("Please confirm your screen brightness is 100%");
+    }
+}
+
+// function validateHeadphones() {
+//     if (document.getElementById("headphones").checked === false) {
+//         alert("Please confirm your headphones are plugged in.");
+//     }
+// }
+
+// function validateVolume() {
+//     if (document.getElementById("volume").checked === false) {
+//         alert("Please confirm your headphone volume is 50%");
+//     }
+// }
+
+// these functions only run when db_connection === false (e.g. omnibus.foo does not exist on server)
+// this is useful for development environments and running the task on a standalone web server with no omnibus integration
+
+function validateSubject() {
+    if (document.getElementById("subjectid").value !== '') {
+        subjectID = subjectid.value;
+    } else {
+        alert("Please enter a valid subject id.");
+    }
+}
+
+function validateSex() {
+    if (document.getElementById("male").checked === true) {
+        sexAtBirth = "M";
+    } else if (document.getElementById("female").checked === true) {
+        sexAtBirth = "F";
+    } else {
+        alert("Please select your sex assigned at birth.");
+    }
+}
+
+function validateSite() {
+    let siteID = document.getElementById("siteid");
+
+    if (document.getElementById("siteid").value === 'none') {
+        alert("Please select a valid research site.");
+    }
+
+    const zeroPad = (num, places) => String(num).padStart(places, '0');
+    switch(siteID.options[siteID.selectedIndex].value){
+        case "Maryland":
+            siteNumber = 'Maryland';
+            break;
+        case "Northwestern":
+            siteNumber = 'NU';
+            break;
+        case "Temple":
+            siteNumber = 'Temple';
+            break;
+        case "Georgia":
+            siteNumber = 'Georgia';
+            break;
+        case "Yale":
+            siteNumber = 'Yale';
+            break;
+        case "Emory":
+            siteNumber = 'Emory';
+            break;
+        default:
+            siteNumber = zeroPad(0,2);
+    }
+}
+
+function validateGUID() {
+    if (document.getElementById("guid").value !== '') {
+        GUID = guid.value;
+    } else {
+        alert("Please enter the GUID provided to you by the researcher.");
+    }
+}
+
+function validateAge() {
+    if (document.getElementById("dob").value !== '') {
+        let DOB = dob.value;
+        let DOByyyy = DOB.slice(0, 4);
+        let DOBmm = DOB.slice(5, 7);
+        // let DOBdd = DOB.slice(8, 10);
+        let ageInMonths = ((yyyy * 12) - (DOByyyy * 12) + (mm - DOBmm));
+        ageAtAssessment = parseInt(ageInMonths);
+    } else {
+        alert("Please enter your date of birth.");
+    }
+
+}
+
+// this function runs when the submit button is pressed
+
 function submitIntake() {
-    // let subjectID = document.getElementById("subjectid").value;
+
     let rightHandedness = document.getElementById("rightHanded").checked;
     let leftHandedness = document.getElementById("leftHanded").checked;
-    // let siteID = document.getElementById("siteid");
+
 
     if (rightHandedness === true) {
         handedness = "right";
+        antihandedness = "left";
     } else if (leftHandedness === true) {
         handedness = "left";
+        antihandedness = "right";
     }
 
-    // const zeroPad = (num, places) => String(num).padStart(places, '0');
-    // switch(siteID.options[siteID.selectedIndex].value){
-    //     case "Maryland":
-    //         // siteNumber = zeroPad(1,2);
-    //         siteNumber = 1;
-    //         break;
-    //     case "Northwestern":
-    //         // siteNumber = zeroPad(2,2);
-    //         siteNumber = 2;
-    //         break;
-    //     case "Temple":
-    //         // siteNumber = zeroPad(3,2);
-    //         siteNumber = 3;
-    //         break;
-    //     case "Georgia":
-    //         // siteNumber = zeroPad(4,2);
-    //         siteNumber = 4;
-    //         break;
-    //     case "Yale":
-    //         // siteNumber = zeroPad(5,2);
-    //         siteNumber = 5;
-    //         break;
-    //     case "Emory":
-    //         // siteNumber = zeroPad(6,2);
-    //         siteNumber = 6;
-    //         break;
-    //     default:
-    //         // siteNumber = zeroPad(0,2);
-    // }
-
-  
-
-    if(subjectID == "") {
+    if (document.getElementById("brightness").checked === false /*|| document.getElementById("headphones").checked === false || document.getElementById("volume").checked === false*/) {
+        // do nothing
     } else {
-        // alert("your subjectid is " + siteNumber + subjectID);
+        // alert("your subjectid is " + subjectID);
         workerId = parseInt(subjectID);
-        switch(workerId%2){
-            case 0:
-              reward = 'money';
-              instr2 = "In this study, you will play a card game, and your goal " +
-                        "is to win as many points as you can." +
-                        "<br /><br />" +
-                        "If your score lands you in the top " + percentile + "% of participants, you will " +
-                        "get an extra $" + bonus + " bonus, so please do your best!" +
-                        "<br /><br />" +
-                        "Please press the zero (0) key to continue.";
-              break;
-            case 1:
-              reward = 'nothing';
-              instr2 = "In this study, you will play a card game, and your goal " +
-                        "is to win as many points as you can." +
-                        "<br /><br />" +
-                        "Please press the zero (0) key to continue.";
-              break;
-        }
         validateIntake();
     }
-
 }

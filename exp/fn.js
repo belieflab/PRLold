@@ -254,8 +254,8 @@ function deepCopy(obj) {
     return (!str || !str.length);
   }
   
-    //onbeforeunload in body
-    function areYouSure() {
-      return "Write something clever here...";
-    }
-    areYouSure();
+  //onbeforeunload in body
+  function areYouSure() {
+    return "Write something clever here...";
+  }
+  areYouSure();

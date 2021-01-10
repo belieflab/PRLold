@@ -5,7 +5,7 @@
   <div id="intake">
     
 
-<form>
+  <form>
     <!-- <label for="handedness"><b>Are you right or left handed?</b></label> -->
     <p><b>Which is your dominant hand?</b></p>
         <label for="right">Right</label>
@@ -15,13 +15,20 @@
         <input type="radio" name="handedness" id="leftHanded" value="leftHanded">
 
         <!-- <span class="checkmark"></span> -->
-  </form>
+
     <p><b>Before proceeding to the task, please confirm the following are true:</b></p>
     <label class="container">Screen brightness is up to 100% &nbsp&nbsp&nbsp&nbsp  
-    <input type="hidden" name="brightness" id="brightness" value="0" />
     <input type="checkbox" name="brightness" id="brightness" value="1"/>
+    </label>
+    <!-- <br>
+    <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      
+    <input type="checkbox" name="headphones" id="headphones" value="1"/>
+    </label>
     <br>
-  </label>
+    <label class="container">Headphone volume is set to 50% &nbsp&nbsp&nbsp  
+    <input type="checkbox" name="volume" id="volume" value="1"/>
+  </label> -->
+  </form>
   
   <!-- <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp               
     <input type="checkbox"> 
@@ -34,20 +41,23 @@
   </label>
 </form>
 <br> -->
-<button id="submitButton" class="loadMain" onclick="submitIntake(), validateHandedness(), validateBrightness()" type="button">submit</button>
+<button id="submitButton" class="loadMain" onclick="validateHandedness(), validateBrightness(), /*validateHeadphones(), validateVolume(),*/ submitIntake()" type="button">SUBMIT</button>
 </div>
 <div id="validation" style="display: none">
     <br>
     <form>
 </form>
 </div>
-<div>
-<button id="nextButton" class="noCursor" style="display: none" onclick="startExperiment()">START</button>
+
+<div id="load" style="display: none">
+<h3 id='pass'>All validation rules were passed successfully. Click to load the experiment.</h3>
+<button id="nextButton" class="noCursor" onclick="startExperiment()">LOAD</button>
 <!-- <p id="nextButton" style="display: none" >please make sure you are in a quiet place. When you are ready to begin, click 'START'</p> -->
 <br>
 </div>
 <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
 <script>$("button.loadMain").click(function(){
+      $.getScript("../exp/rand.js");
       $.getScript("../code/card_task_01.js");
   }); </script>
 <script>

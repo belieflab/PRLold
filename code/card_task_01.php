@@ -111,6 +111,7 @@ $ageInMonths = $_GET["interview_age"];
 <script type="text/javascript" src="../libraries/seedrandom.js"></script>
 <script type="text/javascript" src="../libraries/jquery.csv.js"></script>
 <script type="text/javascript" src="../exp/fn.js"></script>
+<!-- <script type="text/javascript" src="../exp/rand.js"></script> -->
 <script type="text/javascript" src="../exp/conf.js"></script>
 
 <script>

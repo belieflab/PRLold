@@ -105,6 +105,7 @@ document.getElementById('nextButton').onclick = function() {
 
     // reword next button
     $('#nextButton').text("BEGIN");
+    document.getElementById("pass").innerHTML = ''; // hides validation success text
     // $('#nextButton').toggleClass("", "noCursor");
     $("button.noCursor").click(function(){
       $("body").addClass("hideCursor");
