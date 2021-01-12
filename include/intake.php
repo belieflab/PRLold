@@ -12,6 +12,7 @@
         <option value="Georgia">UGA</option>
         <option value="Yale">Yale</option>
         <option value="Emory">Emory</option>
+        <option value="Vanderbilt">Vanderbilt</option>
     </select>
     <label for="facility"></label>
     <!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
