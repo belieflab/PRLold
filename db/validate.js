@@ -81,13 +81,13 @@ function validateSite() {
     let siteID = document.getElementById("siteid");
 
     if (document.getElementById("siteid").value === 'none') {
-        alert("Please select a valid research site.");
+        alert('Please select a valid research site by refreshing the page.\nIf your site is not listed, you may proceed anyway.\nHowever, your site will not be recorded in the datafile.\nTo add your site to this list, please contact: joshua.kenney@yale.edu');
     }
 
-    const zeroPad = (num, places) => String(num).padStart(places, '0');
+    // const zeroPad = (num, places) => String(num).padStart(places, '0');
     switch(siteID.options[siteID.selectedIndex].value){
         case "Maryland":
-            siteNumber = 'Maryland';
+            siteNumber = 'UMBC';
             break;
         case "Northwestern":
             siteNumber = 'NU';
@@ -96,7 +96,7 @@ function validateSite() {
             siteNumber = 'Temple';
             break;
         case "Georgia":
-            siteNumber = 'Georgia';
+            siteNumber = 'UGA';
             break;
         case "Yale":
             siteNumber = 'Yale';
@@ -105,7 +105,7 @@ function validateSite() {
             siteNumber = 'Emory';
             break;
         default:
-            siteNumber = zeroPad(0,2);
+            siteNumber = '';
     }
 }
 
