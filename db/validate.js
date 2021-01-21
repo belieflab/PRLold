@@ -86,23 +86,14 @@ function validateSite() {
 
     // const zeroPad = (num, places) => String(num).padStart(places, '0');
     switch(siteID.options[siteID.selectedIndex].value){
-        case "Maryland":
-            siteNumber = 'UMBC';
-            break;
-        case "Northwestern":
-            siteNumber = 'NU';
-            break;
-        case "Temple":
-            siteNumber = 'Temple';
-            break;
-        case "Georgia":
-            siteNumber = 'UGA';
-            break;
         case "Yale":
             siteNumber = 'Yale';
             break;
-        case "Emory":
-            siteNumber = 'Emory';
+        case "UA":
+            siteNumber = 'UA';
+            break;
+        case "UPenn":
+            siteNumber = 'UPenn';
             break;
         default:
             siteNumber = '';

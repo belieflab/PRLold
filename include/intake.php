@@ -6,13 +6,9 @@
     <p><b>Research Site:</b></p>
     <select name="facility" id="siteid">
         <option value="none">---</option>
-        <option value="Maryland">UMBC</option>
-        <option value="Northwestern">NU</option>
-        <option value="Temple">Temple</option>
-        <option value="Georgia">UGA</option>
         <option value="Yale">Yale</option>
-        <option value="Emory">Emory</option>
-        <option value="Vanderbilt">Vanderbilt</option>
+        <option value="UA">UA</option>
+        <option value="UPenn">UPenn</option>
     </select>
     <label for="facility"></label>
     <!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
