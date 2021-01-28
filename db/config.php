@@ -19,6 +19,7 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/config.php')) {
   $sexAtBirth = $_GET["sex"];
   $institutionAlias = $_GET["site"];
   $ageInMonths = $_GET["interview_age"];
+  $visit = $_GET["visit"];
   } else {
     $db_connection_status = null;
     // echo$db_connection_status;
@@ -29,6 +30,7 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/config.php')) {
     $institutionAlias = '';
     $ageInMonths = '';
     $guid = '';
+    $visit = '';
     $candidateId = '';
     $studyId = '';
   }
