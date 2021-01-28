@@ -189,6 +189,7 @@ function deepCopy(obj) {
         interview_age: ageAtAssessment,
         sex: sexAtBirth,
         visit: visit,
+        week: week,
         handedness: handedness,
         task_version: reward,
         userAgentString: user_agent_string,
