@@ -112,6 +112,7 @@ include_once ("../db/config.php");
       let sexAtBirth;
       let siteNumber;
       let ageAtAssessment;
+      let week;
       let visit;
       let feedbackLink;
 
@@ -121,6 +122,7 @@ include_once ("../db/config.php");
         sexAtBirth = "";
         siteNumber = "";
         ageAtAssessment = "";
+        week = "";
         visit = "";
         feedbackLink = "";
       } else if (db_connection === true) {
@@ -129,6 +131,7 @@ include_once ("../db/config.php");
         sexAtBirth = "<?php echo $sexAtBirth?>";
         siteNumber = "<?php echo $institutionAlias?>";
         ageAtAssessment = "<?php echo $ageInMonths?>";
+        week = "<?php echo $week?>";
         visit = "<?php echo $visit?>";
         feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/kamin.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
       }
