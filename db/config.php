@@ -1,7 +1,7 @@
 <?php
 // check for configuration file on server; if does not exist, set db_connection_status to false.
-if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/collab/config.php')) {
-  include_once ($_SERVER["DOCUMENT_ROOT"] . '/collab/config.php');
+if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/config.php')) {
+  include_once ($_SERVER["DOCUMENT_ROOT"] . '/config.php');
   // echo$_SERVER["DOCUMENT_ROOT"];
   $studyId = $_GET["studyId"];
   $candidateId = $_GET["candidateId"];
