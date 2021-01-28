@@ -64,17 +64,17 @@ include_once ("../db/config.php");
 <div class="filler"> </div>
 <div class="deckContainer task">
     <div class="imgContainer" id="leftDeck">
-        <img id="leftDeckImage" src="../stimuli/deck_red.jpg" height="270px" width="200px"/>
+        <img id="leftDeckImage" src="../stimuli/E/deck_red.jpg" height="270px" width="200px"/>
         <div class="feedback" id="leftFeedback">100</div>
     </div>
     
     <div class="imgContainer" id="middleDeck">
-        <img id="middleDeckImage" src="../stimuli/deck_black.jpg" height="270px" width="200px"/>
+        <img id="middleDeckImage" src="../stimuli/E/deck_black.jpg" height="270px" width="200px"/>
         <div class="feedback" id="middleFeedback">-50</div>
     </div>
     
     <div class="imgContainer" id="rightDeck">
-         <img id="rightDeckImage" src="../stimuli/deck_blue.jpg" height="270px" width="200px"/>
+         <img id="rightDeckImage" src="../stimuli/E/deck_blue.jpg" height="270px" width="200px"/>
          <div class="feedback" id="rightFeedback">-50</div>
     </div>
     
