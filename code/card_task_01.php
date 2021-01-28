@@ -114,6 +114,7 @@ include_once ("../db/config.php");
       let ageAtAssessment;
       let feedbackLink;
       let visit;
+      let week;
 
       if (db_connection === false) {
         GUID = "";
@@ -123,6 +124,7 @@ include_once ("../db/config.php");
         ageAtAssessment = "";
         feedbackLink = "";
         visit = "";
+        week = "";
       } else if (db_connection === true) {
         GUID = "<?php echo $subjectKey?>";
         subjectID = "<?php echo $consortId?>";
@@ -131,6 +133,7 @@ include_once ("../db/config.php");
         ageAtAssessment = "<?php echo $ageInMonths?>";
         feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/kamin.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
         visit =  "<?php echo $visit?>";
+        week =  "<?php echo $week?>";
       }
     </script>
 
