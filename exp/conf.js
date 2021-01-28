@@ -129,7 +129,7 @@ for (var i = trialsPerBlock; i <= totalTrials; i += trialsPerBlock) {
 }
 
 // Choose deck placement
-var deckImagePrefix    = "../stimuli/deck_";
+var deckImagePrefix    = "../stimuli/C/deck_";
 var deckImageExtension = ".jpg";
 var probabilityNames   = ['high', 'medium', 'low'];
 var probabilityOrder   = shuffle(deepCopy(probabilityNames));
