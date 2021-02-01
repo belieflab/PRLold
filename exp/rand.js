@@ -18,12 +18,9 @@
 //       break;
 // }
 
-// money version for ENDURE
-reward = 'money';
+// nothing version for ENDURE per Phil Corlett 2/1/2021
+reward = 'nothing';
 instr2 = "In this study, you will play a card game, and your goal " +
           "is to win as many points as you can." +
-          "<br /><br />" +
-          "If your score lands you in the top " + percentile + "% of participants, you will " +
-          "get an extra $" + bonus + " bonus, so please do your best!" +
           "<br /><br />" +
           "Please press the zero (0) key to continue.";
