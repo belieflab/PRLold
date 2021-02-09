@@ -6,6 +6,7 @@
     $(".buttonHolder").css({display: "block"});
   };
 </script>
+
 <div class="loading centeredDiv">
     <h1 class="loading">Loading...</h1>
   </div>
