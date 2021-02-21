@@ -15,6 +15,7 @@ autoWorkerID 				= data.getvalue("autoWorkerID", "AUTOWORKERID_NULL")
 interview_date 				= data.getvalue("interview_date", "INTERVIEWDATE_NULL")
 interview_age 				= data.getvalue("interview_age", "INTERVIEWAGE_NULL")
 sex 						= data.getvalue("sex", "SEX_NULL")
+phenotype					= data.getvalue("phenotype", "PHENOTYPE_NULL")
 handedness					= data.getvalue("handedness", "HANDEDNESS_NULL")
 task_version 				= data.getvalue("task_version", "TASKVERSION_NULL")
 excludedFileName   			= data.getvalue("excludedFileName", "EXCLUDEDFILENAME_NULL")
@@ -45,11 +46,11 @@ numRows = len(trialNums)
 # Write to the file - XXX FIX BASED ON ROW INDEX
 with open(fileName, 'a') as csvFile:
 	csvWriter = csv.writer(csvFile, delimiter=",")
-	csvWriter.writerow(['subjectkey', 'src_subject_id', 'site', 'interview_date', 'interview_age', 'sex', 'handedness', 'task_version', 'key_press', 'start_time', 'end_time', 'browser', 'index', 'first_half_probabilities', 'second_half_probabilities', 'deck_color', 'deck_position', 'deck_probabilities', 'deck_contingencies', 'response_color', 'response_position', 'response_probability', 'reward_type', 'trial_type', 'rt', 'reward_tally', 'exclusion_reason'])
+	csvWriter.writerow(['subjectkey', 'src_subject_id', 'site', 'interview_date', 'interview_age', 'sex', 'phenotype', 'handedness', 'task_version', 'key_press', 'start_time', 'end_time', 'browser', 'index', 'first_half_probabilities', 'second_half_probabilities', 'deck_color', 'deck_position', 'deck_probabilities', 'deck_contingencies', 'response_color', 'response_position', 'response_probability', 'reward_type', 'trial_type', 'rt', 'reward_tally', 'exclusion_reason'])
 
 	for row in range(numRows):
 
-		csvWriter.writerow([subjectkey, autoWorkerID, site, interview_date, interview_age, sex, handedness, task_version, keys[row], startDate, endDate, userAgentString, trialNums[row],
+		csvWriter.writerow([subjectkey, autoWorkerID, site, interview_date, interview_age, sex, phenotype, handedness, task_version, keys[row], startDate, endDate, userAgentString, trialNums[row],
 			firstHalfProbabilities, secondHalfProbabilities, deckColors[row], deckPositions[row],
 			deckProbabilities[row], deckProbabilityOrder[row], colors[row], positions[row],
 			probabilities[row], results[row], reversals[row], RT[row], score[row], excludedReason])

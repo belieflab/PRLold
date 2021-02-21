@@ -5,20 +5,14 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/config.php')) {
   // echo$_SERVER["DOCUMENT_ROOT"] . '/config.php';
   $studyId = $_GET["studyId"];
   $candidateId = $_GET["candidateId"];
-  if (isset($candidateId)) {
-    $query = "SELECT GUID from phi where sub_id = $candidateId";
-    $prepare = $db_connection->prepare($query);
-    $prepare->execute();
-    $result = $prepare->get_result();
-    $row = $result->fetch_assoc();
-    $guid = $row["GUID"];
-    $prepare->close();
-  }
+
   $subjectKey = $_GET["subjectkey"];
   $consortId = $_GET["src_subject_id"];
   $sexAtBirth = $_GET["sex"];
   $institutionAlias = $_GET["site"];
   $ageInMonths = $_GET["interview_age"];
+  $groupStatus = openssl_decrypt($_GET["phenotype"],$encryptionMethod, $secretHash);
+
   } else {
     $db_connection_status = null;
     // echo$db_connection_status;
@@ -28,7 +22,7 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/config.php')) {
     $sexAtBirth = '';
     $institutionAlias = '';
     $ageInMonths = '';
-    $guid = '';
+    $groupStatus = '';
     $candidateId = '';
     $studyId = '';
   }
